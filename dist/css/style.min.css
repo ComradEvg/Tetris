@@ -1,0 +1,322 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* меняет подсчёт ширины блока */
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+:active {
+  outline: none;
+}
+
+/* убирает линии обводки у браузеров */
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+/* делает строчные теги блочными */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  max-height: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* уравнивает поведение шрифтов и элементов для разных браузеров (в том числе запрет самовольного увеличения шрифтов на айфонах) */
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+/* наследование заданных шрифтов данными элементами */
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+  font-size: inherit;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+a {
+  display: block;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+address {
+  font-size: inherit;
+  font-weight: 400;
+  font-style: inherit;
+}
+
+.ibg {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.ibg > img {
+  display: none;
+}
+
+body {
+  background-color: black;
+  color: #fefefe;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1600px;
+  padding: 0px 1%;
+  margin: 0 auto;
+}
+
+.page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.swiper-scrollbar-drag {
+  background-color: #e05206;
+}
+
+.swiper {
+  padding-bottom: 60px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+  top: 86%;
+  width: 27px;
+  height: 44px;
+  margin-top: -22px;
+  z-index: 10;
+  cursor: pointer;
+  -moz-background-size: 27px 44px;
+  -webkit-background-size: 27px 44px;
+  background-size: 27px 44px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  color: #e05206;
+}
+
+.swiper-button-next, .swiper-container-rtl .swiper-button-prev {
+  right: 10px;
+  left: auto;
+}
+
+.swiper-horizontal > .swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal {
+  left: 9%;
+  bottom: 44px;
+  width: 80%;
+}
+
+.content {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+}
+
+.tetris-field {
+  width: 50%;
+  margin: 0 auto;
+  height: 80%;
+  line-height: 0;
+}
+
+span {
+  border: 1px solid #1d1d1d;
+}
+
+.footer__up {
+  position: relative;
+}
+.footer__bottom {
+  background-repeat: repeat;
+  background-size: auto;
+}
+
+.footer-up {
+  position: absolute;
+  background-repeat: no-repeat;
+  height: 256px;
+  min-width: 435px;
+  right: 5%;
+  z-index: 2;
+  flex-direction: column;
+  justify-content: center;
+  margin: 59px auto;
+  align-items: center;
+}
+@media only screen and (max-width: 1024px) {
+  .footer-up {
+    position: static;
+    justify-content: center;
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .footer-up {
+    min-width: 0;
+  }
+}
+.footer-up__logo {
+  width: 219px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+.footer-up__text {
+  margin-bottom: 30px;
+}
+@media only screen and (max-width: 1024px) {
+  .footer-up__contacts {
+    width: 65%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .footer-up__contacts {
+    width: 70%;
+  }
+}
+
+.footer-up-contacts {
+  flex-direction: column;
+  width: 60%;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 1024px) {
+  .footer-up-contacts {
+    width: 100%;
+  }
+}
+.footer-up-contacts__item {
+  align-items: center;
+  position: relative;
+  margin-bottom: 10px;
+}
+.footer-up-contacts__logo {
+  position: absolute;
+  top: 50%;
+  left: -40px;
+  border: none;
+  margin-right: 0;
+  transform: translateY(-50%);
+}
+.footer-up-contacts__contact {
+  flex-grow: 1;
+  text-align: center;
+}
+.footer-up-contacts__contact a {
+  display: inline;
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #bcbdbc;
+  min-height: 50px;
+}
+.footer-bottom__agreement {
+  text-decoration: underline;
+  color: #ff6c17;
+}
+.footer-bottom__creator a {
+  display: inline;
+  text-decoration: underline;
+  color: #c84937;
+}
+.footer-bottom div + div {
+  margin-left: 20px;
+}
+@media only screen and (max-width: 768px) {
+  .footer-bottom {
+    flex-direction: column;
+    padding: 1% 0px;
+  }
+  .footer-bottom div + div {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}

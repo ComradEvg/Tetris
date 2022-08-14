@@ -1,0 +1,263 @@
+.header {
+	font-family: "DINPro";
+	font-weight: 400;
+	text-transform: uppercase;
+	&__up {
+		background-image: url(../image/background.png);
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+	&__bottom {
+		background: linear-gradient(to bottom, rgba(237, 122, 0, 1) 0%, rgba(227, 65, 0, 1) 100%);
+		position: relative;
+		@media only screen and (max-width: 1024px) {
+			position: static;
+		}
+	}
+}
+// Бургер
+.burger {
+	display: none;
+	flex-direction: column;
+	width: 30px;
+	cursor: pointer;
+	@media only screen and (max-width: 1024px) {
+		display: flex;
+	}
+	span {
+		background: linear-gradient(to bottom, rgba(237, 122, 0, 1) 0%, rgba(227, 65, 0, 1) 100%);
+		border-radius: 10px;
+		height: 3px;
+		margin: 3px 0;
+		transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+	}
+	span:nth-of-type(1) {
+		width: 50%;
+	}
+	span:nth-of-type(2) {
+		width: 100%;
+	}
+	span:nth-of-type(3) {
+		width: 75%;
+	}
+}
+.burger--unlock {
+	span:nth-of-type(1) {
+		transform-origin: bottom;
+		transform: rotatez(45deg) translate(4px, 0px);
+	}
+	span:nth-of-type(2) {
+		transform-origin: top;
+		transform: rotatez(-45deg);
+	}
+	span:nth-of-type(3) {
+		transform-origin: bottom;
+		width: 50%;
+		transform: translate(13px, -5px) rotatez(45deg);
+	}
+}
+// =====================
+// Кнопка в шапке основные стили
+.header-button {
+	flex: 0 0 410px;
+	height: 100%;
+	position: relative;
+	@media only screen and (max-width: 1024px) {
+		border: 2px solid transparent;
+		border-radius: 4%;
+		border-image: linear-gradient(to bottom, rgba(237, 122, 0, 1) 0%, rgba(227, 65, 0, 1) 100%);
+		border-image-slice: 1;
+		height: 38px;
+		background: none;
+	}
+	&__link {
+		position: absolute;
+		left: 70px;
+		display: flex;
+		height: 100%;
+		align-items: center;
+		justify-content: center;
+		font-weight: 900;
+		background: linear-gradient(to bottom, rgba(237, 122, 0, 1) 0%, rgba(227, 65, 0, 1) 100%);
+		-webkit-background-clip: text;
+		color: transparent;
+		@media only screen and (max-width: 1024px) {
+			position: static;
+		}
+	}
+	&__link-icon {
+		font-size: 23px;
+		margin-right: 20px;
+	}
+	&__link-text {
+		span {
+			margin-left: 5px;
+			color: #fff;
+		}
+	}
+}
+// =====================
+// Мини-информация в шапке
+.header-inform {
+	height: 120px;
+
+	@media only screen and (max-width: 1024px) {
+		height: 50px;
+	}
+
+	&__logo {
+		flex: 0 0 15%;
+	}
+
+	&__text {
+		flex: 0 0 15%;
+		white-space: nowrap;
+		span {
+			display: block;
+		}
+	}
+
+	&__contacts {
+		flex: 0 1 60%;
+		@media only screen and (max-width: 1024px) {
+			display: none;
+		}
+	}
+
+	&__button-mobile {
+		display: none;
+
+		@media only screen and (max-width: 1024px) {
+			display: block;
+			flex: 0 0 25%;
+		}
+		@media only screen and (max-width: 480px) {
+			flex: 0 0 38px;
+			.header-button__link-text {
+				display: none;
+			}
+			.header-button__link-icon {
+				margin: 0 auto;
+			}
+		}
+	}
+}
+.header-contacts {
+	justify-content: space-around;
+	&__item {
+		display: flex;
+	}
+}
+// =====================
+// Нижнее меню в контейнере и кнопка
+.header-bottom {
+	height: 47px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 14px;
+
+	@media only screen and (max-width: 1024px) {
+		position: absolute;
+		display: block;
+		height: 100%;
+		width: 80%;
+		top: 50px;
+		left: -100%;
+		background-image: url(../image/background.png);
+		overflow-y: scroll;
+		padding: 1% 0% 50px 0;
+		z-index: 50;
+	}
+	&__button {
+		background: url(../image/record-button.png) center center no-repeat;
+		@media only screen and (max-width: 1024px) {
+			background: none;
+			margin: 4% auto;
+			width: 70%;
+		}
+	}
+}
+.header-bottom--unlock {
+	transition: 0.5s;
+	left: 0%;
+}
+// =====================
+.menu {
+	flex: 0 0 65%;
+	margin-right: 30px;
+	&__list {
+		display: flex;
+		justify-content: space-between;
+		@media only screen and (max-width: 1024px) {
+			flex-direction: column;
+		}
+	}
+
+	&__item {
+		margin-left: 15px;
+		position: relative;
+		line-height: 47px;
+		@media only screen and (max-width: 1024px) {
+			line-height: 25px;
+		}
+	}
+	li:hover {
+		color: #000;
+		transition: 0.5s;
+		.submenu {
+			display: flex;
+		}
+	}
+}
+// Элементы подменю
+.submenu {
+	display: none;
+	position: absolute;
+	flex-direction: column;
+	width: fit-content;
+	top: 100%;
+	left: 0;
+	z-index: 10;
+	background: linear-gradient(to bottom, rgba(237, 122, 0, 1) 0%, rgba(227, 65, 0, 1) 100%);
+	-webkit-transition: 0.5s ease-in-out;
+	-moz-transition: 0.5s ease-in-out;
+	-o-transition: 0.5s ease-in-out;
+	transition: 0.5s ease-in-out;
+	@media only screen and (max-width: 1024px) {
+		display: block;
+		position: static;
+		background: transparent;
+		width: 100%;
+	}
+	&__item {
+		white-space: pre;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+		color: white;
+		line-height: 41px;
+		padding: 0px 10px;
+		@media only screen and (max-width: 1024px) {
+			white-space: unset;
+			line-height: 20px;
+			border-bottom: none;
+		}
+	}
+}
+.submenu:hover {
+	display: flex;
+}
+// =========================
+// Продолжение кнопки за контейнером
+.button-bg {
+	position: absolute;
+	background: url(../image/record-back.png) center center repeat;
+	top: 0;
+	right: 0;
+	width: 50px;
+	height: 100%;
+	@media only screen and (max-width: 1024px) {
+		display: none;
+	}
+}
+// =====================

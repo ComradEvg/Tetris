@@ -1,0 +1,116 @@
+.footer {
+   &__up {
+      position: relative;
+   }
+
+   &__bottom {
+      background-repeat: repeat;
+      background-size: auto;
+   }
+}
+.footer-up {
+   position: absolute;
+   background-repeat: no-repeat;
+   height: 256px;
+   min-width: 435px;
+   right: 5%;
+   z-index: 2;
+   flex-direction: column;
+   justify-content: center;
+   margin: 59px auto;
+   align-items: center;
+   @media only screen and (max-width: 1024px) {
+      position: static;
+      justify-content: center;
+      margin: 0 auto;
+   }
+   @media only screen and (max-width: 480px) {
+         min-width: 0;
+      }
+
+   &__logo {
+      width: 219px;
+      height: 40px;
+      margin-bottom: 10px;
+   }
+
+   &__text {
+      margin-bottom: 30px;
+   }
+
+   &__contacts {
+      @media only screen and (max-width: 1024px) {
+         width: 65%;
+      }
+      @media only screen and (max-width: 480px) {
+         width: 70%;
+      }
+   }
+}
+.footer-up-contacts {
+   flex-direction: column;
+   width: 60%;
+   margin: 0 auto;
+   @media only screen and (max-width: 1024px) {
+      width: 100%;
+   }
+   &__item {
+      align-items: center;
+      position: relative;
+      margin-bottom: 10px;
+   }
+
+   &__logo {
+      position: absolute;
+      top: 50%;
+      left: -40px;
+      border: none;
+      margin-right: 0;
+      transform: translateY(-50%);
+   }
+
+   &__contact {
+      flex-grow: 1;
+      text-align: center;
+      a {
+         display: inline;
+         font-weight: inherit;
+         font-size: inherit;
+      }
+   }
+}
+
+.footer-bottom {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: #bcbdbc;
+   min-height: 50px;
+   &__year {
+   }
+
+   &__agreement {
+      text-decoration: underline;
+      color: #ff6c17;
+   }
+
+   &__creator {
+      a {
+         display: inline;
+         text-decoration: underline;
+         color: #c84937;
+      }
+   }
+
+   div+div{
+      margin-left: 20px;
+   }
+   @media only screen and (max-width: 768px) {
+      flex-direction: column;
+      padding: 1% 0px;
+      div+div{
+      margin-left: 0;
+      margin-top: 10px;
+   }
+   }
+}

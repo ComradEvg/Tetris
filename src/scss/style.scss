@@ -1,0 +1,23 @@
+@import "nullstyle";
+@import "template";
+@import "swiper";
+// Информация о компании в хедере и футере (основное)
+.content{
+   flex: 1 1 auto; 
+   display: flex;
+   align-items: center;
+}
+.tetris-field{
+  
+   width: 50%;
+   margin: 0 auto;
+   height: 80%;
+   line-height: 0;
+}
+span{
+   border: 1px solid rgb(29, 29, 29)
+}
+// ==================
+// Подключаем футер
+@import "footer";
+// ==================
