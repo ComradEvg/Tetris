@@ -1,4 +1,15 @@
 export default class View {
+
+   static color = {
+      '1': 'purple',
+      '2': 'red',
+      '3': 'orange',
+      '4': 'green',
+      '5': 'yellow',
+      '6': 'blue',
+      '7': 'cyan',
+   }
+
    constructor(width, height, row, column) {
       this.width = width;
       this.height = height;
@@ -29,7 +40,7 @@ export default class View {
          let row = playfield[y];
          for (let x = 0; x < row.length; x++) {
             if (row[x]) {
-               this.makeBlock(x, y, this.row, this.column, 'red')
+               this.makeBlock(x, y, this.row, this.column, View.color[row[x]])
             }
 
          }
